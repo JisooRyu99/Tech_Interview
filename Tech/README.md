@@ -1,3 +1,10 @@
+- [#Statistics/Math](#statistics-math)
+- [#Deep Learning](#deep-learning)
+- [#Operating System](#operating-system)
+- [#Data Structure](#data-structure)
+- [#Computer Science](#computer-science)
+- [#Python](#python)
+
 ## #Statistics/Math
 ### “likelihood”와 “probability”의 차이는 무엇일까요?
 **확률**은 어떤 시행에서 특정 결과가 나올 가능성을 말하며 총합은 1이다. 반면에 **가능도**는 실재가 바탕이 되어야 하고 어떤 시행을 충분히 수행한 뒤 그 결과를 토대로 겨우의 수의 가능성을 도출하는 것이다. 어디까지나 추촌이기 때문에 가능성의 합이 1이 되지 않을 수도 있다.
