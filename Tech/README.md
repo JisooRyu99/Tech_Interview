@@ -1,9 +1,11 @@
 - [#Statistics/Math](#statistics-math)
+- [#Machine Learning](#Machine-Learning)
 - [#Deep Learning](#deep-learning)
 - [#Operating System](#operating-system)
 - [#Data Structure](#data-structure)
 - [#Computer Science](#computer-science)
 - [#Python](#python)
+- [#Database](#Database)
 
 ## #Statistics/Math
 ### “likelihood”와 “probability”의 차이는 무엇일까요?
@@ -21,7 +23,26 @@
 ### 모집단과 표본의 차이는 무엇인가요?
 **모집단**은 어떤 정보를 얻고자 하는 전체 대상 또는 전체 집합을 의미하고 **표본집단**은 모집단으로부터 추출된 모집단의 부분 집합이다.
 
+
+### 공분산과 상관계수는 무엇일까요?
+답변 필요
+
 ---
+## #Machine Learning
+### 차원의 저주에 대해 설명하고, 이를 해결하기 위한 방법을 말해주세요.
+답변 필요
+
+### L1, L2 정규화에 대해 설명해주세요.
+답변 필요
+
+### Cross Validation은 무엇이고 어떻게 해야하나요? (각 종류와 장단점)
+답변 필요
+
+### KNN 과 K-means 에 대해서 설명해주세요.
+답변 필요
+
+### XGBoost을 아시나요? 왜 이 모델이 캐글에서 유명할까요?
+답변 필요
 
 ## #Deep Learning
 ### TensorFlow, PyTorch 특징과 차이가 뭘까요?
@@ -44,6 +65,16 @@ Data Normalization은 입력 데이터의 최소, 최대값을 일정 범위(0~1
 
 ### Gradient Descent에 대해서 중학생이 이해할 수 있게 쉽게 설명해주세요.
 위 아래로 구불구불한 산길을 눈을 감고 지나면서 지금 밟고 있는 땅의 경사 방향을 토대로 가장 고도가 낮은 지점을 찾아나가는 것
+
+
+### 오버피팅일 경우 어떻게 대처해야 할까요? 알고계신 방법들을 전부 말해주세요.
+답변 필요
+
+### Dropout은 무엇이며 왜 사용하는 지 말해주세요.
+답변 필요
+
+### GD가 Local Minima 문제를 피하는 방법을 말해주세요.
+답변 필요
 
 ---
 
@@ -80,3 +111,7 @@ Linked List는 동적 자료구조로 크기를 정할 필요가 없고 배열�
 ### python은 어떤 특징을 가진 언어인가요?
 파이썬은 스크립트 언어이고 (변수의 자료형을 지정하지 않고 선언하는)동적 타입 언어이다. 또한 파이썬은 대부분의 운영체제에서 모두 작동된다.
 빠른 개발 속도, 활발한 생태계, 간결하고 쉬운 문법을 장점으로 가지고 있다.
+
+## #Database
+### NoSQL과 RDBMS의 차이점을 설명해주세요.
+답변 필요
