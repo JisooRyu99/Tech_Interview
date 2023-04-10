@@ -36,21 +36,22 @@
 
 ### L1, L2 정규화에 대해 설명해주세요.
 L1 Norm과 L2 Norm의 차이
-![image](https://user-images.githubusercontent.com/90206705/230733708-35d4a699-d231-4c6e-bf7e-dba7ab6f99ed.png)
+![image](https://user-images.githubusercontent.com/90206705/230733708-35d4a699-d231-4c6e-bf7e-dba7ab6f99ed.png)<br>
 - 검정색 두 점사이의 L1 Norm 은 빨간색, 파란색, 노란색 선으로 표현 될 수 있고
 - L2 Norm 은 오직 초록색 선으로만 표현될 수 있습니다.
 - L1 Norm 은 여러가지 path 를 가지지만 L2 Norm 은 Unique shortest path 를 가집니다.
 - 예를 들어 p = (1, 0), q = (0, 0) 일 때 L1 Norm = 1, L2 Norm = 1 로 값은 같지만 여전히 Unique shortest path 라고 할 수 있습니다.
 
-![image](https://user-images.githubusercontent.com/90206705/230850739-b7cd3091-4e97-4325-a385-ab7c2fad17da.png)
+![image](https://user-images.githubusercontent.com/90206705/230850739-b7cd3091-4e97-4325-a385-ab7c2fad17da.png)<br>
 L1 Norm은 두 개의 벡터를 빼고, 절대값을 취한 뒤, 합한 것입니다. L2 Norm은 두 개의 벡터의 각 원소를 빼고, 제곱을 하고, 합치고, 루트를 씌운 것입니다.
 
-![image](https://user-images.githubusercontent.com/90206705/230852011-07c96ca3-d52b-4f8f-a584-a55de1bf5fef.png)
+![image](https://user-images.githubusercontent.com/90206705/230852011-07c96ca3-d52b-4f8f-a584-a55de1bf5fef.png) <br>
 
 **L1 Regulation(Lasso)**는 가중치의 절대값에 패널티를 주는 방법을 뜻합니다. L1 Regulation은 0이 아닌 모든 weight는 Cost에 더해지기 때문에 Gradient descent를 할 때, gradient에 비례하여 weight가 감소되기 때문에 weight 값이 양수 또는 음수로 존재하기만 하면 weight를 줄이고자합니다. L1 Regulationd은 절대값을 가지기 때문에 항상 기울기가 1또는 -1입니다.
 
-답변 필요
+**L2 Regulation(Ridge)**는 기존 Cost function에 가중치 제곱의 합을 더하는 형태입니다. wight의 크기에 따라 weight값이 큰 값을 더 빠르게 감소시키는 weight decay기법입니다. weight의 크기에 따라 가중치의 패널티 정도가 달라지기 때문에 가중치가 전반적으로 작어져 학습 효과가 L1 대비 더 좋게 나타납니다. 람다(λ)값에 따라 패널티의 정도를 조절할 수 있습니다.
 
+![image](https://user-images.githubusercontent.com/90206705/230858833-b591855d-1ac9-4007-9e94-851605dafa36.png)
 
 ### Cross Validation은 무엇이고 어떻게 해야하나요? (각 종류와 장단점)
 보통 train set으로 모델을 훈련을 한 후 test set으로 모델을 검증합니다. 하지만 이런 방식은 통해 고정된 test set을 통해 모델의 성능을 검증하고 수정하는 과정을 반복하면, test set에만 잘 동작하는 overfitting이 일어나게 됩니다. 이를 해결하기 위해 Cross Validation을 통해 train set과 Validation set을 분리한 후, Validation set을 사용해 검증하는 방식을 사용합니다.
@@ -62,12 +63,36 @@ Cross Validation 기법 종류에는 K-Fold Cross Validation, Stratified k-fold 
   - 기법에 대해 알기
 
 ### KNN 과 K-means 에 대해서 설명해주세요.
-답변 필요
+KNN과 K-means의 가장 큰 차이는 분류(Classifier)와 군집(Clustering)의 차이입니다.
+둘은 모두 K개의 점을 지정하여 거리르 기반으로 구현되는 거리기반 분석 알고리즘입니다.
+먼저 **KNN**(최근접 이웃방법)은 해당 데이터와 가장 가까이 있는 K개의 데이터를 확인하여 새로운 데이터 특성을 확인하는 방법입니다. 지도학습 알고리즘 중 하나로 K가 짝수면 1:1 대응이 될 수도 있기 때문에 K는 홀수를 쓰는 것이 보편적입니다. KNN은 회귀와 분류 모두 사용 가능합니다.
+
+**K-means** 알고리즘은 데이터를 K개의 군집(cluster)으로 묶는 clustering 알고리즘입니다. 여기서 K는 묶을 그룹의 수를 말하고 Means는 데이터로부터 그 데이터가 속한 그룹의 중심까지의 평균 거리를 의미하며 이 값을 최소화 하는 것이 K-means입니다.
+
 - 꼬리질문
-K-means의 대표적 의미론적 단점은 무엇인가요? (계산량 많다는것 말고)
+  - 동작 방법
+  - K-means의 대표적 의미론적 단점은 무엇인가요? (계산량 많다는것 말고)
 
 ### XGBoost을 아시나요? 왜 이 모델이 캐글에서 유명할까요?
-답변 필요
+**XGBoost**는 속도가 빠르고, 자원 효율성이 높아서 캐글에도 인기가 많습니다. **XGBoost**는 Extreme Gradient Boost의 준말이며 기존 Gradient Tree Boosting알고리즘에 과적합 방지를 위한 기법이 추가된 지도학습 알고리즘 입니다. **XGBoost**는 기본 학습기를 의사결정나무로 하며 Gradient Boosting과 같이 Gradient(잔차)를 이용하여 이전 모델의 약점을 보완하는 방식으로 학습니다. **XGBoost**는 과적합 방지가 잘되고 예측 성능이 좋다는 장점이 있지만 작은 데이터에 대해서는 과적합 가능성이 있다는 단점을 가지고 있습니다.
+분류와 회귀문제에 모두 사용가능하며, XGBoost는 자체에 얼리스탑과 같은 과적합 규제 기능이 있어 강한 내구성을 지닙니다. 또한, 다양한 파라미터 옵션을 제공하는 Customizing이 용이하기도 합니다. 이러한 이유들로 기존 GBoost보다 XGBoost가 더 인기 있습니다.
+
+1-1. 꼬리질문1 : XG boost의 하이퍼파라미터들을 아는데로 설명해주세요.
+우선 일반 파라미터, 부스터 파라미터, 학습 파라미터 세가지 범주로 나눠볼 수 있습니다.
+
+- 일반 파라미터 : 어떤 부스터를 쓸지(선형 or 트리) , 몇개의 스레드를 쓸지, verbosity(정보표시)값은 몇으로 줄지를 결정한다.
+- 부스터 파라미터 : 해당 파라미터들은 일반 파라미터에서 어떤 부스터를 선택했느냐에 따라 다르다. 트리기준으로 봤을때, lr , weak learner 갯수 , max_depth 등 과적합을 조정할 수 있는 파라미터들이 있고,subsample로 학습 데이터 비율 고려, colsample_bytree로 각 트리별 피처의 비율을 고려해줄 수 있다. 두 값은 보통 낮을수록 과적합이 방지된다.
+- 람다와 알파값은 L2,L1 규제에 쓰이는 값으로 피처갯수가 많을 때 고려할 수 있다. 두 값은 클수록 과적합을 방지한다.
+- min_child_weight는 관측치에 대한 가중치 합의 최소를 말하며, gamma는 해당값보다 크게 감소할 때 분리한다. 두 값은 높을수록 과적합을 방지한다.
+
+1-2. 꼬리질문2 : 자신만의 XGboost의 파라미터 튜닝 방법이 있나요?
+우선 lr는 학습에 큰 영향을 미치므로, 큰값으로 고정시킨 후 다른 파라미터를 실험한 후, 마지막에 낮추는 방향으로 실험을 진행합니다.
+또한 과적합을 방지하기위해 위에서 설명한 파라미터들을 튜닝합니다. 무엇보다 중요한 건 기록! 또 기록이기에 노션에 잘 기록합니다.
+
+1-3. XGB의 학습과정은?
+
+- 부스팅 계열 vs 배깅 계열 헷갈리지 않게 공부하기!! 
+- 한줄 요약 : 부스팅은 처음에 학습하고 학습 잘 못한 파라미터들 가져다가 그 부분에 대해 학습.
 
 ## #Deep Learning
 ### TensorFlow, PyTorch 특징과 차이가 뭘까요?
@@ -93,10 +118,14 @@ Data Normalization은 입력 데이터의 최소, 최대값을 일정 범위(0~1
 
 
 ### 오버피팅일 경우 어떻게 대처해야 할까요? 알고계신 방법들을 전부 말해주세요.
-답변 필요
+Overfitting을 막기 위해 여러 방법이 있습니다.
+1. 데이터의 양이 적을 경우, 데이터의 특정 패턴이나 노이즈까지 쉽게 암기하게 되므로 과적합 현상이 발생할 확률이 늘어납니다. 이럴 경우 기존의 데이터를 증강시켜 데이터를 늘리고 데이터가 많을수록 모델은 데이터의 일반적인 패턴을 학습하여 과적합을 방지할 수 있습니다.
+2. 복잡한 모델은 간단한 모델보다 과적합될 가능성이 높으므로 정규화를 통해서 복잡한 모델를 좀 더 간단하게 하는 방법이 있습니다.
+3. Dropout을 사용해 학습과정마다 일정 비율의 뉴런만 사용하는 방법을 사용합니다.
+4. 일정 횟수 이상 validation loss가 증가하는 시점부터 overfitting이 발생했다고 판단하고 이에 학습을 종료시킵니다,
+5. Batch Normalization으로 데이터 분포를 통일 시켜줘서 과적합을 방지합니다. 
 
 ### Dropout은 무엇이며 왜 사용하는 지 말해주세요.
-답변 필요
 Dropout은 서로 연결된 layer에서 0에서 1사이의 확률로 뉴런을 제거(drop)하는 기법입니다. 꺼지는 뉴런의 종류와 개수는 오로지 랜덤하게 Dropout rate에 따라 결정이됩니다. Dropout Rate는 하이퍼파라미터이며 일반적으로 0.5로 설정합니다.
 Dropout은 어떤 특정한 설명변수 Feature만을 과도하게 집중하여 학습함으로써 발생할 수 있는 overfitting을 방지하기 위해 사용됩니다.
 - 꼬리질문
@@ -104,8 +133,12 @@ Dropout은 어떤 특정한 설명변수 Feature만을 과도하게 집중하여
   Dropout은 신경망 학습 속도가 다소 느려지는 문제를 가지고 있지만 Batch Normalization과 Dropout을 사용해 학습속도를 증가시켰습니다.
 
 ### GD가 Local Minima 문제를 피하는 방법을 말해주세요.
-답변 필요
+원래는 loss function의 Gloabal minimum을 향해 가중치를 갱신해야 하지만, loss function의 Local minimum에 빠지는 문제가 발생할 수도 있다. 그럼에도 불구하고 momentum 개념등을 도입한 RMSProp, Adam 같은 다양한 Optimization 기법이 있기 때문에 Local minimum 문제를 어느 정도 피할 수 있다.
 
+- 꼬리질문
+  - GD가 local Minima 문제를 피하는 방법은?
+  - 찾은 해가 Global Minimum인지 아닌지 알 수 있는 방법은?
+  - Momentum, RMSprop, Adam과 같은 Optimization 개념 및 종류
 ---
 
 ## #Operating System
@@ -144,4 +177,5 @@ Linked List는 동적 자료구조로 크기를 정할 필요가 없고 배열�
 
 ## #Database
 ### NoSQL과 RDBMS의 차이점을 설명해주세요.
-답변 필요
+**RDBMS**는 관계형 데이터베이스 관리 시스템을 의미합니다. 다른 테이블과 관곌르 맺고 모여있는 집합체로 이해할 수 있습니다. 이러한 관계를 나타내기 위해 외래 키(foreign key)를 사용한 테이블 간 Join이 가능하다는게 RDBMS의 가장 큰 특징입니다. 정해진 스키마에 따라 데이터를 저장하여야 하므로 정확한 데이터 구조를 보장하는 장점이 있습니다. 반면에 테이블간 관계를 맺고 있어 시스템이 커질 경우 JOIN문이 많은 복잡한 쿼리가 만들어질 수 있고 스키마로 인해 데이터가 유연하지 못해 나중에 스키마가 변경 될 경우 번거롭고 어렵다는 단점이 있습니다.
+**NoSQL**은 RDBMS와는 달리 테이블 간 관계를 정의하지 않습니다. 데이터 테이블은 그냥 하나의 테이블이며 따라서 일반적으로 테이블 간 Join도 불가능합니다. 빅테이터의 등장으로 인해 데이터와 트래픽이 기하급수적으로 증가함에 따라 RDBMS에 단점인 성능을 향상시키기 위해 등장했고 데이터 일관성은 포기하되 비용을 고려하여 여러 대의 데이터에 분산하여 저장하는 Scale-Out을 목표로 등장했습니다. 스키마가 없기 때문에 유연하며 자유로운 데이터 구조를 가질 수 있고 언지든 저장된 데이터를 조정하고 새로운 필드를 추가할 수 있다는 장점이 있습니다. 반면에, 스키마가 존재하지 않기에 명확한 데이터 구조를 보장하지 않으며 데이터 구조 결정하기가 어려울 수 있다는 단점이 있습니다.
