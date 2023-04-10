@@ -41,11 +41,25 @@ L1 Norm과 L2 Norm의 차이
 - L2 Norm 은 오직 초록색 선으로만 표현될 수 있습니다.
 - L1 Norm 은 여러가지 path 를 가지지만 L2 Norm 은 Unique shortest path 를 가집니다.
 - 예를 들어 p = (1, 0), q = (0, 0) 일 때 L1 Norm = 1, L2 Norm = 1 로 값은 같지만 여전히 Unique shortest path 라고 할 수 있습니다.
+
+![image](https://user-images.githubusercontent.com/90206705/230850739-b7cd3091-4e97-4325-a385-ab7c2fad17da.png)
+L1 Norm은 두 개의 벡터를 빼고, 절대값을 취한 뒤, 합한 것입니다. L2 Norm은 두 개의 벡터의 각 원소를 빼고, 제곱을 하고, 합치고, 루트를 씌운 것입니다.
+
+![image](https://user-images.githubusercontent.com/90206705/230852011-07c96ca3-d52b-4f8f-a584-a55de1bf5fef.png)
+
+**L1 Regulation(Lasso)**는 가중치의 절대값에 패널티를 주는 방법을 뜻합니다. L1 Regulation은 0이 아닌 모든 weight는 Cost에 더해지기 때문에 Gradient descent를 할 때, gradient에 비례하여 weight가 감소되기 때문에 weight 값이 양수 또는 음수로 존재하기만 하면 weight를 줄이고자합니다. L1 Regulationd은 절대값을 가지기 때문에 항상 기울기가 1또는 -1입니다.
+
 답변 필요
 
 
 ### Cross Validation은 무엇이고 어떻게 해야하나요? (각 종류와 장단점)
-답변 필요
+보통 train set으로 모델을 훈련을 한 후 test set으로 모델을 검증합니다. 하지만 이런 방식은 통해 고정된 test set을 통해 모델의 성능을 검증하고 수정하는 과정을 반복하면, test set에만 잘 동작하는 overfitting이 일어나게 됩니다. 이를 해결하기 위해 Cross Validation을 통해 train set과 Validation set을 분리한 후, Validation set을 사용해 검증하는 방식을 사용합니다.
+
+Cross Validaion은 모덴 데이터 셋을 평가에 활용하여 과적합을 방지하고 정확도를 향상시킵니다. 또한, 적은 데이터에 대한 Validation 신뢰성이 상승한다는 장점을 가지고 있는 반면, iteration 횟수가 많기 때문에 모델 훈련 및 평가 소요시간이 증가한다는 단점이 있습니다.
+
+Cross Validation 기법 종류에는 K-Fold Cross Validation, Stratified k-fold cross Validation, Hold-Out Cross Validation, Leave-p-Out Cross Validation, Leave-One-Out Cross Validation 등의 종류가 있습니다.
+-꼬리질문
+  - 기법에 대해 알기
 
 ### KNN 과 K-means 에 대해서 설명해주세요.
 답변 필요
