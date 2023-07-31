@@ -1,17 +1,4 @@
-- [#Statistics/Math](statistics/math)
-- [#Machine Learning](Machine-Learning)
-- [#Deep Learning](deep-learning)
-- [#Network](Network)
-- [#Database](Database)
-- [#Operating System](operating-system)
-- [#Data Structure](data-structure)
-- [#Computer Science](computer-science)
-- [#Python](Python)
-- [#Data analysis](Data-analysis)
-  
----
-
-## Statistics/Math
+## #Statistics/Math
 
 ### “likelihood”와 “probability”의 차이는 무엇일까요?
 
@@ -93,6 +80,8 @@ Pandas에서는 dropna, fillna를 이용해 누락된 데이터를 제거하거�
 
 현재 주어진 **모수(가정)**에서 이 데이터가 관찰될 가능성인 **가능도(Likelihood)와** 데이터 전체의 분포인 **증거(Evidence)를 바탕으로** 가설에 대해 사전에 세운 확률인 **사전확률을** 실제로 가설이 성립할 확률인 **사후확률로 업데이트**하는 것입니다. 즉, 조건부 확률에 사전확률(prior)을 활용하여 통계적 추론을 하는 방법입니다.  
 따라서 데이터가 주어지기 전에 이미 어느 정도 확률값을 예측하고 있을 때 이를 새로 수집한 데이터와 합쳐서 최종 결과에 반영할 수 있습니다.
+
+> **베이즈 정리는 새로운 정보를 토대로 어떤 사건이 발생했다는 주장에 대한 신뢰도를 갱신해 나가는 방법**
 
 </br>
 
