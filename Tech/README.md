@@ -296,6 +296,7 @@ ROC 커브는 거짓 긍정(False Positive)을 피하면서, 참 긍정(True Pos
 분류 문제에서는 이진 분류의 경우 Binary **Cross Entropy**를 다중 분류의 경우 Categorical Cross Entropy를 주로 사용합니다. 이외에도 불균형 데이터셋의 성능을 향상시키기 위해 사용되는 Focal loss가 있습니다. Focal loss 는 Categorical Cross Entropy에 (1 - y_pred)^γ를 곱하여  γ (gamma)값이 증가할수록 쉬운 샘플에 대한 가중치가 줄어들어 어려운 샘플에 대해 더 집중적으로 학습할 수 있게 합니다.
 
 > 손실함수(loss funciton)는 딥러닝 모델이 실제 레이블과 가장 가까운 값이 예측되도록 훈련할 때, 모델의 예측값과 실제 레이블 간의 거리를 측정하기 위해 사용되는 함수입니다.
+> Focal loss : 어렵거나 쉽게 오분류되는 케이스에 대하여 더 큰 가중치를 주는 방법을 구현한 것이다. 반대로 쉬운 케이스의 경우 낮은 가중치를 반영한다.
 
 </br>
 
